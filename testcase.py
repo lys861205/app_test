@@ -5,31 +5,34 @@ import unittest
 class MyTest(unittest.TestCase):
 
   def setUp(self):
-    print("---setUp---")
+    print("setUp")
 
   def tearDown(self):
-    print("---tearDown---")
+    print("tearDown")
 
   @unittest.skip("one skipping")
   def test_one(self):
-    print("+++++++++one")
+    print("one")
 
   def test_two(self):
-    print("+++++++++two")
+    print("two")
+
+  def test_three(self):
+    print("three")
 
   @classmethod
   def setUpClass(cls):
-    print("----set up cls----")
+    print("set up cls")
 
   @classmethod
   def tearDownClass(cls):
-    print("----tear down cls----")
+    print("tear down cls")
 
 
 if __name__ == "__main__":
   #unittest.main()
 
-  tests = [MyTest("test_one"), MyTest("test_two")]
+  tests = [MyTest("test_one"), MyTest("test_two"), MyTest("test_three")]
   suite = unittest.TestSuite()
   suite.addTests(tests)
 
