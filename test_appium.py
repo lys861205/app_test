@@ -18,6 +18,12 @@ def start_living():
     #driver = webdriver.Remote("http://10.129.148.209:4723/wd/hub", desired_capabilities)
     driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
     print(driver.session)
+    
+    # tap action
+    ele = driver.find_element_by_ios_uiautomation("uia_string")
+    action = TouchAction(dirver)
+    action.tap(ele)
+
     driver.quit()
   except Exception as err:
     print(err)
