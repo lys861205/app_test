@@ -15,9 +15,8 @@ desired_capabilities["platformName"] =  "iOS"
 def start_living():
   try:
     print(desired_capabilities)
-    driver = webdriver.Remote("http://10.129.148.209:4723/wd/hub", desired_capabilities)
-    #driver = webdriver.Remote("http://10.129.148.209:4723/wd/hub")
-    #driver.start_session(desired_capabilities)
+    #driver = webdriver.Remote("http://10.129.148.209:4723/wd/hub", desired_capabilities)
+    driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
     print(driver.session)
     driver.quit()
   except Exception as err:
